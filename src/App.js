@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Box, Grid, Paper, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 import Textbox from "./common/Textbox";
 import CheckboxField from "./common/Checkbox";
@@ -16,10 +16,18 @@ export default function App() {
             bgcolor: "#ffffff",
           }}
         >
-          <Typography variant="h5">
-            E1 Tracking
-            <hr />
-          </Typography>
+          <Stack
+            spacing={1} // Space between the text lines
+            mt={2}
+            sx={{
+              backgroundColor: "#f0f0f0",
+              padding: "5px",
+              border: "1px solid #ccc",
+            }}
+          >
+            <Typography variant="h5">E1 Tracking</Typography>
+          </Stack>
+
           <Grid container spacing={2} mt={2}>
             <Grid size={{ xs: 6, md: 4 }}>
               <GridRow label="E1R#:">
@@ -70,18 +78,41 @@ export default function App() {
             <Grid size={{ xs: 6, md: 4 }}>
               <GridRow label="Expedite:">
                 <Box sx={{ borderRadius: 1 }}>
-                  <CheckboxField/>
+                  <CheckboxField />
                 </Box>
               </GridRow>
               <GridRow label="Notify NMA">
                 <Box sx={{ borderRadius: 1 }}>
-                <CheckboxField/>
+                  <CheckboxField />
                 </Box>
               </GridRow>
             </Grid>
           </Grid>
+          <Stack
+            spacing={1} // Space between the text lines
+            mt={2}
+            sx={{
+              backgroundColor: "#f0f0f0",
+              padding: "5px",
+              border: "1px solid #ccc",
+            }}
+          >
+            {/* First string */}
+            <Typography variant="body1" fontWeight="bold">
+              Completion Notification:
+            </Typography>
+
+            {/* Second string */}
+            <Typography variant="body2">
+              Completion Notification Details
+            </Typography>
+          </Stack>
+
           <Grid container spacing={2} mt={2}>
             <Grid size={{ xs: 6, md: 4 }}>
+              <GridRow label="CCD">
+                <Box sx={{ borderRadius: 1 }}>CCDValue</Box>
+              </GridRow>
               <GridRow label="CCD">
                 <Box sx={{ borderRadius: 1 }}>CCDValue</Box>
               </GridRow>
@@ -95,7 +126,6 @@ export default function App() {
 
 const GridRow = ({ label, children }) => (
   <Grid container spacing={2} sx={{ mb: 1 }}>
-    {/* Label Column: Half-width on small screens, full-width on extra-small, left-aligned */}
     <Grid
       item
       xs={12}
