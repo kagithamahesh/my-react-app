@@ -14,26 +14,11 @@ export default function App() {
             bgcolor: "#ffffff",
           }}
         >
-          <Typography
-            variant="h5"
-
-          >
+          <Typography variant="h5">
             E1 Tracking
-            <hr/>
+            <hr />
           </Typography>
           <Grid container spacing={2} mt={2}>
-            {/* <Grid
-            size={{ xs: 12, md: 12 }}
-            sx={{
-              fontWeight: "bold",
-              display: "flex",
-              alignItems: "center",
-              paddingTop: "0px !important",
-            }}
-          >
-            <Box sx={{  borderRadius: 1 }}>E1 Tracking</Box>
-
-          </Grid> */}
             <Grid size={{ xs: 6, md: 4 }}>
               <GridRow label="E1R#:">
                 <Box sx={{ borderRadius: 1 }}>NEW</Box>
@@ -114,9 +99,8 @@ const GridRow = ({ label, children }) => (
     >
       {label}
     </Grid>
-    {/* Value/Input Column: Half-width on small screens, full-width on extra-small */}
+
     <Grid item xs={12} sm={6} sx={{ paddingTop: "0px !important" }}>
-      {/* Ensure the input or value takes up 100% width of the allocated space */}
       <Box sx={{ width: "100%" }}>{children}</Box>
     </Grid>
   </Grid>
