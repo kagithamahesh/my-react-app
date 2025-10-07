@@ -1,5 +1,7 @@
 import { Box, Grid, Paper, TextField, Typography } from "@mui/material";
 import React from "react";
+import Textbox from "./common/Textbox";
+import CheckboxField from "./common/Checkbox";
 
 export default function App() {
   return (
@@ -31,12 +33,20 @@ export default function App() {
               </GridRow>
               <GridRow label="Associated TEO:">
                 <Box sx={{ py: 0.5, px: 1, borderRadius: 1 }}>
-                  <TextField size="small"></TextField>
+                  <Textbox
+                    label="associatedTEO"
+                    nam="associatedTEO"
+                    size="small"
+                  />
                 </Box>
               </GridRow>
               <GridRow label="Associated CCR:">
                 <Box sx={{ py: 0.5, px: 1, borderRadius: 1 }}>
-                  <TextField size="small"></TextField>
+                  <Textbox
+                    label="associatedCCR"
+                    name="associatedCCR"
+                    size="small"
+                  />
                 </Box>
               </GridRow>
             </Grid>
@@ -60,12 +70,12 @@ export default function App() {
             <Grid size={{ xs: 6, md: 4 }}>
               <GridRow label="Expedite:">
                 <Box sx={{ borderRadius: 1 }}>
-                  <input type="checkbox"></input>
+                  <CheckboxField/>
                 </Box>
               </GridRow>
               <GridRow label="Notify NMA">
                 <Box sx={{ borderRadius: 1 }}>
-                  <input type="checkbox"></input>
+                <CheckboxField/>
                 </Box>
               </GridRow>
             </Grid>
